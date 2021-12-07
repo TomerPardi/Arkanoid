@@ -83,20 +83,7 @@ public class Paddle implements Sprite, Collidable {
             this.rectangle = new Rectangle(new Point(leftBorder, rectangle.getUpperLeft().getY()),
                     rectangle.getWidth(), rectangle.getHeight());
         }
-        // now prevent ball from step into paddle
-//        for (Sprite sprite : sprites.getSpriteList()) {
-//            if (sprite.getClass().getName().equals("gameobjects.Ball")) {
-//                Ball ball = (Ball) sprites.getSpriteList().get(0);
-//                if (isBallInPaddle(ball)) {
-//                    this.rectangle = new Rectangle(new Point(ball.getX() + speed, rectangle.getUpperLeft().getY()),
-//                            rectangle.getWidth(), rectangle.getHeight());
-//                    if (Math.signum(ball.getVelocity().getDx()) == 1.0) {
-//                        ball.setVelocity(-ball.getVelocity().getDx(), ball.getVelocity().getDy());
-//                    }
-//                    ball.moveOneStep();
-//                }
-//            }
-//        }
+
         if (sprites.getSpriteList().get(0).getClass().getName().equals("gameobjects.Ball")) {
             Ball ball1 = (Ball) sprites.getSpriteList().get(0);
             if (isBallInPaddle(ball1)) {
@@ -108,6 +95,7 @@ public class Paddle implements Sprite, Collidable {
                 ball1.moveOneStep();
             }
         }
+        
         if (sprites.getSpriteList().get(1).getClass().getName().equals("gameobjects.Ball")) {
             Ball ball2 = (Ball) sprites.getSpriteList().get(1);
             if (isBallInPaddle(ball2)) {
